@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
+p {
+  color: blue; 
+  font-size: 2em;
+  position: absolute;
+  bottom: 70px;
+  right: 1000px; 
+
+}
