@@ -3,11 +3,18 @@ body {
   background-color: black;
 }
 
+#res {
+  color: yellow; 
+  font-size: 2em;
+  position: absolute;
+  bottom: 640px;
+  left: 250px; 
+}
+
 p {
   color: blue; 
   font-size: 2em;
   position: absolute;
-  bottom: 70px;
-  right: 1000px; 
-
+  bottom: 610px;
+  left: 110px; 
 }

@@ -16,36 +16,23 @@ export class Ghost {
     ctx.closePath();
   }
   
-  move () {
-    if (getRandomArbitrary(-1, 1) > 0.0) {
-      this.speed.x++;
-      while (!this.speed.x === 0)
-        this.speed.x++;
-    } else {
-      this.speed.x--;
-      while (!this.speed.x === 0) 
-        this.speed.x--;
+  move() {
+    if (this.position.x < 450 && this.position.y == 330) {
+      this.speed.x += 0.01;
+    }  else if (this.position.x >= 450 && this.position.y < 550) {
+      this.speed.y += 0.01;
+    } else if (this.position.y >= 550 && this.position.x > 200) {
+      this.speed.x -= 0.01;
+    } else if (this.position.x <= 200 && this.position.y > 150) {
+      this.speed.y -= 0.01;
+    } else if (this.position.x < 200 && this.position.y < 150) {
+      this.speed.x += 0.01;
     }
-      this.speed.y = 0;
-  }
-  
-  move1 () {
-    if (getRandomArbitrary(-1, 1) > 0.0) {
-      this.speed.y += 0.1;
-      while (!this.speed.y === 0)
-        this.speed.y -= 0.1;
-    } else {
-      this.speed.y -= 0.1;
-      while (!this.speed.y === 0) 
-        this.speed.y += 0.1;
-    }
-    this.speed.x = 0;
   }
   
   update () {
     this.draw();
-    this.move1();
-  
+    this.move();
     this.position.x += this.speed.x;
     this.position.y += this.speed.y;
   }
@@ -62,5 +49,5 @@ export const ghost = new Ghost({ position : {
   y: 330,
 }, speed : {
   x: 0,
-y: 0,
+  y: 0,
 }});

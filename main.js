@@ -108,14 +108,16 @@ function animate() {
       pacman.position.y - ghost.position.y) < 
       pacman.radius + ghost.radius
   ) {
-    alert('GAME OVER!');
+    document.getElementById("res").innerHTML = "Loose!";
+    //alert('GAME OVER!');
     // нужно остановить аниацию
     cancelAnimationFrame(animate);
     return; 
   }
 
-  if (score == 120) {
-    alert('WIN!');
+  if (score == 306) {
+    document.getElementById("res").innerHTML = "Win!";
+    //alert('WIN!');
     cancelAnimationFrame(animate);
     return;   
   }
